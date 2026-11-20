@@ -175,7 +175,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     radial-gradient(ellipse at 76% 37%, rgba(51, 120, 214, .29), transparent 43%),
     linear-gradient(90deg, rgba(4, 12, 29, .92) 0%, rgba(5, 17, 39, .8) 36%, rgba(8, 24, 53, .47) 69%, rgba(5, 16, 36, .44) 100%),
     linear-gradient(0deg, #071321 0%, rgba(7, 19, 33, .08) 37%, rgba(5, 13, 26, .28) 100%),
-    url("/images/india-panorama.svg");
+    var(--hero-panorama);
   background-position: center, center, center, center 57%;
   background-size: cover;
   transform: scale(1.015);

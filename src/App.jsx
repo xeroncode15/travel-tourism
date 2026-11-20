@@ -85,7 +85,7 @@ function App() {
       <header className="topbar">
         <a className="brand-lockup" href="#home" aria-label="Bharat Yatra AI home">
           <span className="logo-frame">
-            <img src="/images/amity-logo.png" alt="Amity University Patna logo" />
+            <img src={`${import.meta.env.BASE_URL}images/amity-logo.png`} alt="Amity University Patna logo" />
           </span>
           <span className="brand-copy">
             <strong className="institution-name">AMITY UNIVERSITY PATNA</strong>
@@ -108,7 +108,11 @@ function App() {
 
       <main>
         <section className="hero" id="home" aria-labelledby="page-title">
-          <div className="hero-backdrop" aria-hidden="true" />
+          <div
+            className="hero-backdrop"
+            style={{ "--hero-panorama": `url("${import.meta.env.BASE_URL}images/india-panorama.svg")` }}
+            aria-hidden="true"
+          />
           <div className="hero-atmosphere" aria-hidden="true" />
           <svg className="hero-monument" viewBox="0 0 420 240" aria-hidden="true">
             <path d="M0 204 58 157l41 28 62-76 53 60 59-92 52 72 45-52 50 55v88H0z" fill="#72818c" fillOpacity=".42" />
@@ -386,7 +390,7 @@ function App() {
                       {destination.image && (
                         <img
                           className="destination-photo"
-                          src={destination.image.src}
+                          src={`${import.meta.env.BASE_URL}${destination.image.src.replace(/^\/+/, "")}`}
                           alt={destination.image.alt}
                           loading="lazy"
                           decoding="async"

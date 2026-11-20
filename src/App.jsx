@@ -2,6 +2,7 @@ import React, { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import destinations from "../destinations.json";
 import destinationImages from "../destination-images.json";
 import travelGuides from "../travel-guides.json";
+import PlaceExplorer from "./components/PlaceExplorer.jsx";
 
 const IndiaGlobe = lazy(() => import("./components/IndiaGlobe.jsx"));
 
@@ -50,7 +51,10 @@ function App() {
   const [travelerCount, setTravelerCount] = useState(2);
   const [nightsPerStop, setNightsPerStop] = useState(1);
   const [daysPerStop, setDaysPerStop] = useState(1);
-  const [previewedDestinationId, setPreviewedDestinationId] = useState(2);
+  const [featuredIndex, setFeaturedIndex] = useState(0);
+  const [isSpotlightPaused, setIsSpotlightPaused] = useState(false);
+  const [isSpotlightHovered, setIsSpotlightHovered] = useState(false);
+  const [isSpotlightFocused, setIsSpotlightFocused] = useState(false);
 
   const categories = useMemo(
     () => ["All destinations", ...new Set(destinations.map((destination) => destination.category))],
@@ -71,6 +75,9 @@ function App() {
     return matchesName && matchesCategory;
   });
   const featuredDestinations = destinations.filter((destination) => featuredIds.has(destination.id));
+  const featuredDestination = featuredDestinations[featuredIndex] ?? featuredDestinations[0];
+  const featuredImage = featuredDestination.image ?? destinationImages[featuredDestination.id];
+  const isFeaturedPlanned = tripIds.includes(featuredDestination.id);
   const spendByCategory = useMemo(
     () => {
       const totals = {
@@ -115,6 +122,29 @@ function App() {
     localStorage.setItem(plannerStorageKey, JSON.stringify(tripIds));
   }, [tripIds]);
 
+  useEffect(() => {
+    if (
+      isSpotlightPaused ||
+      isSpotlightHovered ||
+      isSpotlightFocused ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return undefined;
+    }
+
+    const timerId = window.setInterval(() => {
+      setFeaturedIndex((currentIndex) => (currentIndex + 1) % featuredDestinations.length);
+    }, 6500);
+
+    return () => window.clearInterval(timerId);
+  }, [isSpotlightPaused, isSpotlightHovered, isSpotlightFocused, featuredDestinations.length]);
+
+  function moveFeaturedDestination(direction) {
+    setFeaturedIndex(
+      (currentIndex) => (currentIndex + direction + featuredDestinations.length) % featuredDestinations.length
+    );
+  }
+
   function addToTrip(destination) {
     if (tripIds.includes(destination.id)) {
       setNotice(`${destination.name} is already in your trip.`);
@@ -147,6 +177,7 @@ function App() {
         <nav className="primary-nav" aria-label="Main navigation">
           <a href="#home">Home</a>
           <a href="#experiences">Experiences</a>
+          <a href="#place-explorer">Place Explorer</a>
           <a href="#destinations">Destinations</a>
         </nav>
 
@@ -268,41 +299,105 @@ function App() {
             <article className="experience-card hidden-card">
               <div className="card-kicker"><span>01</span> GO BEYOND THE GUIDEBOOK</div>
               <h3>Explore Hidden India</h3>
-              <p>Discover stories etched into India's ancient universities and quiet heritage sites.</p>
-              <div className="hidden-stops">
-                {featuredDestinations.map((destination) => (
-                  <div
-                    className={`hidden-stop${previewedDestinationId === destination.id ? " is-previewed" : ""}${tripIds.includes(destination.id) ? " is-selected" : ""}`}
-                    key={destination.id}
-                  >
-                    <span className="stop-index">{String(destination.id).padStart(2, "0")}</span>
-                    <button
-                      type="button"
-                      className="stop-preview"
-                      onClick={() => setPreviewedDestinationId(destination.id)}
-                      aria-pressed={previewedDestinationId === destination.id}
-                      aria-label={`Preview ${destination.name}`}
-                    >
-                      <span className="stop-title-line">
-                        <span className="stop-name">{destination.name}</span>
-                        <span className="stop-category">{destination.category}</span>
-                      </span>
-                      <span className="stop-hook">{destination.description}</span>
-                    </button>
-                    <button
-                      type="button"
-                      className={`icon-button${tripIds.includes(destination.id) ? " is-added" : ""}`}
-                      onClick={() => {
-                        setPreviewedDestinationId(destination.id);
-                        addToTrip(destination);
-                      }}
-                      aria-label={tripIds.includes(destination.id) ? `${destination.name} is in your trip` : `Add ${destination.name} to your journey`}
-                      aria-pressed={tripIds.includes(destination.id)}
-                    >
-                      {tripIds.includes(destination.id) ? "✓" : "+"}
-                    </button>
+              <p>Heritage highlights that rotate through Nalanda, Vaishali and Vikramshila.</p>
+              <div
+                className="destination-spotlight"
+                role="group"
+                aria-label="Featured heritage destination carousel"
+                onMouseEnter={() => setIsSpotlightHovered(true)}
+                onMouseLeave={() => setIsSpotlightHovered(false)}
+                onFocusCapture={() => setIsSpotlightFocused(true)}
+                onBlurCapture={(event) => {
+                  if (!event.currentTarget.contains(event.relatedTarget)) {
+                    setIsSpotlightFocused(false);
+                  }
+                }}
+              >
+                <div className="spotlight-image-wrap">
+                  <img
+                    key={featuredDestination.id}
+                    className="spotlight-image"
+                    src={`${import.meta.env.BASE_URL}${featuredImage.src.replace(/^\/+/, "")}`}
+                    alt={featuredImage.alt}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span className="spotlight-counter">
+                    {String(featuredIndex + 1).padStart(2, "0")} / {String(featuredDestinations.length).padStart(2, "0")}
+                  </span>
+                  <span className="photo-credit">
+                    Photo: <a href={featuredImage.sourceUrl} target="_blank" rel="noreferrer">{featuredImage.credit}</a>
+                    {" · "}
+                    <a href={featuredImage.licenseUrl} target="_blank" rel="noreferrer">{featuredImage.license}</a>
+                  </span>
+                </div>
+                <div className="spotlight-content" key={featuredDestination.id}>
+                  <div className="spotlight-meta">
+                    <span className="stop-category">{featuredDestination.category}</span>
+                    <span className="spotlight-location">{featuredDestination.location.city}, {featuredDestination.state}</span>
                   </div>
-                ))}
+                  <h4 className="spotlight-title">{featuredDestination.name}</h4>
+                  <p className="spotlight-description">{featuredDestination.description}</p>
+                  <span className="spotlight-details">
+                    {featuredDestination.durationHours} hrs suggested · {featuredDestination.budgetLevel} budget
+                  </span>
+                </div>
+                <div className="spotlight-controls">
+                  <div className="spotlight-dots" role="group" aria-label="Choose a featured destination">
+                    {featuredDestinations.map((destination, index) => (
+                      <button
+                        key={destination.id}
+                        type="button"
+                        className={`spotlight-dot${index === featuredIndex ? " is-active" : ""}`}
+                        onClick={() => setFeaturedIndex(index)}
+                        aria-label={`Show ${destination.name}`}
+                        aria-pressed={index === featuredIndex}
+                      />
+                    ))}
+                  </div>
+                  <span className="spotlight-rotation" aria-live="polite">
+                    {isSpotlightPaused ? "Paused" : "Auto"}
+                  </span>
+                  <button
+                    type="button"
+                    className="spotlight-pause"
+                    onClick={() => {
+                      const shouldPause = !isSpotlightPaused;
+                      setIsSpotlightPaused(shouldPause);
+                      if (!shouldPause) setIsSpotlightFocused(false);
+                    }}
+                    aria-pressed={isSpotlightPaused}
+                    aria-label={isSpotlightPaused ? "Resume automatic destination rotation" : "Pause automatic destination rotation"}
+                  >
+                    {isSpotlightPaused ? "Resume" : "Pause"}
+                  </button>
+                  <button
+                    type="button"
+                    className="icon-button"
+                    onClick={() => moveFeaturedDestination(-1)}
+                    aria-label="Previous featured destination"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    type="button"
+                    className="icon-button"
+                    onClick={() => moveFeaturedDestination(1)}
+                    aria-label="Next featured destination"
+                  >
+                    ›
+                  </button>
+                </div>
+                <button
+                  className={`explore-button spotlight-add${isFeaturedPlanned ? " is-added" : ""}`}
+                  type="button"
+                  onClick={() => addToTrip(featuredDestination)}
+                  aria-label={isFeaturedPlanned ? `${featuredDestination.name} is in your trip` : `Add ${featuredDestination.name} to your journey`}
+                  aria-pressed={isFeaturedPlanned}
+                >
+                  {isFeaturedPlanned ? "Added to your trip" : "Add this stop to your trip"}
+                  <span aria-hidden="true">{isFeaturedPlanned ? "✓" : "+"}</span>
+                </button>
               </div>
             </article>
 
@@ -394,6 +489,8 @@ function App() {
             </article>
           </div>
         </section>
+
+        <PlaceExplorer />
 
         <section className="map-section section-wrap" aria-labelledby="map-title">
           <div className="map-panel">

@@ -975,6 +975,19 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .guide-budget > strong { grid-column: 2; grid-row: 1 / span 2; align-self: center; color: #f5d399; font-family: "Manrope", var(--sans); font-size: 17px; }
 .guide-budget > small { color: #93a2ae; font-size: 8px; }
 .guide-budget p { grid-column: 1 / -1; margin-top: 4px; }
+.expense-breakdown { grid-column: 1 / -1; display: grid; gap: 6px; margin: 8px 0 0; padding: 8px 0 0; border-top: 1px solid rgba(255, 255, 255, .08); list-style: none; }
+.expense-breakdown li { display: flex; justify-content: space-between; gap: 8px; color: #98a7b3; font-size: 8px; }
+.expense-breakdown li strong { color: #dce5eb; font-size: 8px; white-space: nowrap; }
+.guide-info-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 12px; }
+.guide-info-card { min-width: 0; padding: 10px; border: 1px solid rgba(255, 255, 255, .08); background: rgba(255, 255, 255, .025); }
+.guide-info-card h4 { margin: 0 0 7px; }
+.guide-info-card p { margin: 0; color: #98a7b3; font-size: 9px; line-height: 1.65; }
+.guide-info-card .guide-copy { margin-top: 7px; }
+.guide-info-card .guide-copy strong { color: #c8d1d8; }
+.guide-info-wide { grid-column: 1 / -1; }
+.guide-list { display: grid; gap: 6px; margin: 0; padding-left: 14px; color: #98a7b3; font-size: 9px; line-height: 1.6; }
+.guide-link { display: inline-block; margin-top: 8px; color: #f0c77e; font-size: 9px; font-weight: 700; text-decoration: none; }
+.guide-link:hover { color: #ffe0a6; text-decoration: underline; }
 .travel-tips li { position: relative; padding-left: 12px; color: #98a7b3; font-size: 9px; line-height: 1.6; }
 .travel-tips li::before { position: absolute; top: 5px; left: 0; width: 4px; height: 4px; border-radius: 50%; background: var(--gold); content: ""; }
 
@@ -1168,6 +1181,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .hero-actions { align-items: flex-start; flex-direction: column; margin-top: 23px; }
   .button { min-width: 205px; justify-content: space-between; }
   .hero-globe { right: -4%; bottom: 9%; width: 72vw; }
+  .guide-info-grid { grid-template-columns: 1fr; }
+  .guide-info-wide { grid-column: auto; }
   .globe-orbit-label { font-size: 6px; }
   .globe-caption { right: 1%; bottom: 23%; padding: 7px 9px; }
   .scroll-cue { left: 18px; bottom: 19px; gap: 7px; font-size: 6px; letter-spacing: 1px; }

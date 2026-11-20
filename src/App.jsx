@@ -1,5 +1,6 @@
 import React, { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import destinations from "../destinations.json";
+import travelGuides from "../travel-guides.json";
 
 const IndiaGlobe = lazy(() => import("./components/IndiaGlobe.jsx"));
 
@@ -29,6 +30,10 @@ function readSavedTrip() {
   return parsedTrip.filter((id) => validIds.has(id));
 }
 
+function formatInrRange([minimum, maximum]) {
+  return `₹${minimum.toLocaleString("en-IN")} – ₹${maximum.toLocaleString("en-IN")}`;
+}
+
 function App() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All destinations");
@@ -56,8 +61,7 @@ function App() {
   });
   const featuredDestinations = destinations.filter((destination) => featuredIds.has(destination.id));
   const estimatedPerTraveler = plannedDestinations.reduce(
-    (total, destination) =>
-      total + (destination.estimatedBudget?.perTraveler ?? (destination.budgetLevel === "low" ? 850 : 1800)),
+    (total, destination) => total + travelGuides[destination.id].dayEstimate,
     0
   );
 
@@ -240,7 +244,7 @@ function App() {
             <article className="experience-card budget-card">
               <div className="card-kicker"><span>02</span> PLAN WITH CLARITY</div>
               <h3>Smart Budget<br />Calculator</h3>
-              <p>A useful starting estimate based on the destinations in your journey.</p>
+              <p>Indicative local costs for one night and one sightseeing day at each selected stop.</p>
               <label className="traveler-control">
                 <span>Travellers</span>
                 <input
@@ -255,11 +259,11 @@ function App() {
                 />
               </label>
               <div className="budget-total">
-                <span>INDICATIVE ON-GROUND ESTIMATE</span>
+                <span>ESTIMATED LOCAL SPEND</span>
                 <strong>₹{(estimatedPerTraveler * travelerCount).toLocaleString("en-IN")}</strong>
                 <small>for {travelerCount} {travelerCount === 1 ? "traveller" : "travellers"}</small>
               </div>
-              <p className="budget-disclaimer">Planning guide only; transport, stays and ticket prices vary.</p>
+              <p className="budget-disclaimer">Includes a budget stay, meals, local travel and typical tickets. Excludes intercity travel; actual prices vary.</p>
             </article>
 
             <article className="experience-card safety-card">
@@ -384,6 +388,20 @@ function App() {
             {filteredDestinations.length > 0 ? (
               filteredDestinations.map((destination, index) => {
                 const isPlanned = tripIds.includes(destination.id);
+                const guide = travelGuides[destination.id];
+                const expenseItems = [
+                  ["Stay · 1 night", guide.stayRange],
+                  ["Meals · 1 day", guide.foodRange],
+                  ["Local transport", guide.transportRange],
+                  ["Typical tickets", guide.ticketsRange]
+                ];
+                const dailyExpenseRange = expenseItems.reduce(
+                  ([minimum, maximum], [, [itemMinimum, itemMaximum]]) => [
+                    minimum + itemMinimum,
+                    maximum + itemMaximum
+                  ],
+                  [0, 0]
+                );
                 return (
                   <article className={`destination-card card-tone-${index % 5}`} key={destination.id}>
                     <div className={`card-art${destination.image ? " has-image" : ""}`}>
@@ -427,19 +445,23 @@ function App() {
                         {isPlanned ? "Added to trip" : "Explore"}
                         <span aria-hidden="true">{isPlanned ? "✓" : "↗"}</span>
                       </button>
-                      {destination.attractions && (
-                        <details className="destination-guide">
-                          <summary>Attractions &amp; travel guide <span aria-hidden="true">+</span></summary>
-                          <div className="guide-content">
-                            <h4>Explore {destination.name}</h4>
-                            <ul className="attraction-list">
-                              {destination.attractions.map((attraction) => (
-                                <li key={attraction.name}>
-                                  <strong>{attraction.name}</strong>
-                                  <span>{attraction.description}</span>
-                                </li>
-                              ))}
-                            </ul>
+                      <details className="destination-guide">
+                        <summary>Full travel guide <span aria-hidden="true">+</span></summary>
+                        <div className="guide-content">
+                          {destination.attractions && (
+                            <>
+                              <h4>Attractions &amp; travel guide</h4>
+                              <ul className="attraction-list">
+                                {destination.attractions.map((attraction) => (
+                                  <li key={attraction.name}>
+                                    <strong>{attraction.name}</strong>
+                                    <span>{attraction.description}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </>
+                          )}
+                          {destination.location && (
                             <div className="guide-location">
                               <strong>Location</strong>
                               <p>{destination.location.areas.join(" · ")}</p>
@@ -447,24 +469,98 @@ function App() {
                                 {destination.location.latitude.toFixed(4)}°N, {destination.location.longitude.toFixed(4)}°E
                               </small>
                             </div>
-                            <div className="guide-budget">
-                              <span>INDICATIVE BUDGET</span>
-                              <strong>₹{destination.estimatedBudget.perTraveler.toLocaleString("en-IN")}</strong>
-                              <small>per traveler · per {destination.estimatedBudget.period}</small>
-                              <p>
-                                Includes {destination.estimatedBudget.includes.join(", ").toLowerCase()}. Excludes{" "}
-                                {destination.estimatedBudget.excludes.join(" and ").toLowerCase()}.
-                              </p>
-                            </div>
-                            <h4>Best time to visit</h4>
-                            <p className="guide-copy">{destination.bestTimeToVisit}</p>
-                            <h4>Travel tips</h4>
-                            <ul className="travel-tips">
-                              {destination.travelTips.map((tip) => <li key={tip}>{tip}</li>)}
+                          )}
+                          <div className="guide-budget">
+                            <span>EST. LOCAL COST · 1 NIGHT + 1 DAY</span>
+                            <strong>{formatInrRange(dailyExpenseRange)}</strong>
+                            <small>per traveler · indicative INR range</small>
+                            <ul className="expense-breakdown">
+                              {expenseItems.map(([label, range]) => (
+                                <li key={label}>
+                                  <span>{label}</span>
+                                  <strong>{formatInrRange(range)}</strong>
+                                </li>
+                              ))}
                             </ul>
+                            <p>Excludes intercity travel, shopping and personal expenses. Rates vary by season and availability.</p>
                           </div>
-                        </details>
-                      )}
+                          <div className="guide-info-grid">
+                            <article className="guide-info-card">
+                              <h4>Environment &amp; surroundings</h4>
+                              <p>{guide.surroundings}</p>
+                            </article>
+                            <article className="guide-info-card">
+                              <h4>Hotels &amp; stay areas</h4>
+                              <p>{guide.hotelAreas}</p>
+                              <p className="guide-copy">Indicative budget room: {formatInrRange(guide.stayRange)} per night.</p>
+                              <a
+                                className="guide-link"
+                                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`hotels in ${destination.name}, ${destination.state}`)}`}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                Find hotels &amp; current ratings ↗
+                              </a>
+                            </article>
+                            <article className="guide-info-card">
+                              <h4>Culture &amp; language</h4>
+                              <p>{guide.culture}</p>
+                              <p className="guide-copy"><strong>Common languages:</strong> {guide.languages.join(", ")}</p>
+                            </article>
+                            <article className="guide-info-card">
+                              <h4>Getting around</h4>
+                              <ul className="guide-list">
+                                {guide.travelModes.map((mode) => <li key={mode}>{mode}</li>)}
+                              </ul>
+                            </article>
+                            <article className="guide-info-card">
+                              <h4>Cleanliness &amp; facilities</h4>
+                              <p>{guide.cleanliness}</p>
+                            </article>
+                            <article className="guide-info-card">
+                              <h4>Weather &amp; best season</h4>
+                              <p>{guide.weather}</p>
+                              <a
+                                className="guide-link"
+                                href={`https://www.google.com/search?q=${encodeURIComponent(`weather in ${destination.name}, ${destination.state}`)}`}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                Check live weather ↗
+                              </a>
+                            </article>
+                            <article className="guide-info-card guide-info-wide">
+                              <h4>Rules &amp; visitor guidance</h4>
+                              <ul className="guide-list">
+                                {guide.rules.map((rule) => <li key={rule}>{rule}</li>)}
+                              </ul>
+                              <a
+                                className="guide-link"
+                                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${destination.name}, ${destination.state} attractions reviews`)}`}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                Read current visitor reviews ↗
+                              </a>
+                              <p className="guide-copy">Reviews and ratings open in Google Maps and may change over time; no fixed scores are shown here.</p>
+                            </article>
+                          </div>
+                          {destination.bestTimeToVisit && (
+                            <>
+                              <h4>Best time to visit</h4>
+                              <p className="guide-copy">{destination.bestTimeToVisit}</p>
+                            </>
+                          )}
+                          {destination.travelTips && (
+                            <>
+                              <h4>More travel tips</h4>
+                              <ul className="travel-tips">
+                                {destination.travelTips.map((tip) => <li key={tip}>{tip}</li>)}
+                              </ul>
+                            </>
+                          )}
+                        </div>
+                      </details>
                     </div>
                   </article>
                 );

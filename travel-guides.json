@@ -1,0 +1,192 @@
+{
+  "1": {
+    "surroundings": "A calm pilgrimage town on the Falgu plain, with monasteries, meditation centres and the Mahabodhi Temple complex. The temple area is busiest around prayer times and Buddhist festivals.",
+    "hotelAreas": "Look around the Mahabodhi Temple and Gaya Road for guesthouses and hotels. Gaya town has a wider range of stays.",
+    "stayRange": [1000, 3500],
+    "foodRange": [400, 1000],
+    "transportRange": [250, 800],
+    "ticketsRange": [100, 500],
+    "dayEstimate": 3800,
+    "culture": "A major Buddhist pilgrimage destination with visitors from across Asia. Keep voices low in prayer areas and dress modestly at religious sites.",
+    "languages": ["Hindi", "Magahi", "English"],
+    "travelModes": ["Auto-rickshaw and e-rickshaw", "Taxi and local bus", "Rail via Gaya Junction", "Gaya Airport (check current routes)"],
+    "cleanliness": "Cleanliness varies with crowds and season. Use marked bins, carry drinking water and use the visitor facilities provided at the temple complex.",
+    "weather": "Generally most comfortable from October to February. March to June can be very hot; the July to September monsoon can bring heavy rain and humidity.",
+    "rules": [
+      "Remove footwear where requested and follow signs about photography and restricted areas.",
+      "Respect silence and worshippers in meditation and prayer spaces.",
+      "Use only authorised guides and transport, and check temple opening information before travelling."
+    ]
+  },
+  "2": {
+    "surroundings": "An open archaeological landscape of monasteries and brick ruins in a quiet rural setting. The museum and excavated complex are the main visitor areas.",
+    "hotelAreas": "Accommodation close to the ruins is limited. Rajgir, about 12 km away, offers more guesthouses and hotels; confirm return transport before booking.",
+    "stayRange": [900, 2800],
+    "foodRange": [350, 800],
+    "transportRange": [300, 900],
+    "ticketsRange": [50, 300],
+    "dayEstimate": 3000,
+    "culture": "The ancient university is an important Buddhist and learning heritage site. Visitors are welcome; treat the excavations as protected archaeological remains.",
+    "languages": ["Hindi", "Magahi", "English"],
+    "travelModes": ["Auto-rickshaw and taxi from Rajgir", "Regional bus", "Rail via nearby Rajgir or Bihar Sharif (check schedules)"],
+    "cleanliness": "The site is mostly outdoors, so shade, bins and facilities can be limited. Carry water, take litter back to bins and stay on visitor paths.",
+    "weather": "October to February is usually cooler for walking the ruins. Summer afternoons are very hot; monsoon rain can make paths muddy.",
+    "rules": [
+      "Do not climb on, mark or remove anything from the protected ruins.",
+      "Follow museum and site signs for photography, tickets and permitted routes.",
+      "Wear sun protection and sturdy footwear; paths can be uneven."
+    ]
+  },
+  "3": {
+    "surroundings": "A green valley ringed by rocky hills, with hot springs, temples, heritage sites and outdoor attractions. Weekends and holidays can be crowded.",
+    "hotelAreas": "Choose a stay near Rajgir town, the railway station or the main road for easier access to attractions and food.",
+    "stayRange": [1200, 4000],
+    "foodRange": [450, 1100],
+    "transportRange": [350, 1200],
+    "ticketsRange": [300, 1500],
+    "dayEstimate": 4300,
+    "culture": "Rajgir is shared by Buddhist, Jain and Hindu pilgrimage traditions. Dress respectfully at shrines and be considerate around local worship and hot springs.",
+    "languages": ["Hindi", "Magahi", "English"],
+    "travelModes": ["Auto-rickshaw and taxi", "Rail and regional buses", "Walking within attraction areas", "Ropeway where operating and ticketed"],
+    "cleanliness": "Busy attraction areas can accumulate litter, especially on holidays. Use bins, avoid feeding wildlife and carry water on hill walks.",
+    "weather": "October to February is generally pleasant for outdoor visits. Summer is hot; monsoon rain can affect hill paths and outdoor attraction schedules.",
+    "rules": [
+      "Follow operator instructions and safety requirements at the ropeway and Glass Bridge; check current tickets and hours.",
+      "Stay on marked paths, do not litter and do not feed monkeys or other wildlife.",
+      "Check hot-spring etiquette and posted bathing guidance before entering."
+    ]
+  },
+  "4": {
+    "surroundings": "A quiet rural heritage area with archaeological sites, open fields and village roads. Distances between sites can be easier by pre-arranged vehicle.",
+    "hotelAreas": "Stay near the main site for a short visit; Hajipur or Muzaffarpur generally offer a broader choice of hotels and services.",
+    "stayRange": [900, 2600],
+    "foodRange": [350, 850],
+    "transportRange": [400, 1200],
+    "ticketsRange": [0, 250],
+    "dayEstimate": 3000,
+    "culture": "Vaishali is associated with Buddhist and Jain heritage and local village life. Ask before photographing people and respect worship areas.",
+    "languages": ["Hindi", "Bhojpuri", "English"],
+    "travelModes": ["Pre-booked taxi or local auto", "Regional bus from Hajipur", "Rail via Hajipur, followed by road transport"],
+    "cleanliness": "Facilities are more limited outside larger towns. Carry water and snacks, use bins where available and plan restroom stops ahead.",
+    "weather": "October to February is usually the most comfortable season. Summer heat is intense and monsoon showers can disrupt rural road travel.",
+    "rules": [
+      "Treat stupas, pillars and archaeological remains as protected heritage; do not climb or carve on them.",
+      "Follow any posted entry, footwear and photography guidance at religious sites.",
+      "Confirm transport back to your hotel before visiting quieter sites."
+    ]
+  },
+  "5": {
+    "surroundings": "A lively riverside capital on the Ganges, combining museums, markets, parks and historic landmarks. Traffic and crowds vary greatly by neighbourhood and time of day.",
+    "hotelAreas": "Fraser Road, Exhibition Road and Boring Road have many hotel and food options. Choose a stay near your planned attractions to reduce cross-city travel.",
+    "stayRange": [1400, 4500],
+    "foodRange": [500, 1400],
+    "transportRange": [350, 1200],
+    "ticketsRange": [100, 900],
+    "dayEstimate": 4700,
+    "culture": "Patna's culture blends Bihari food, riverfront traditions and a long history. Try local cuisine respectfully and ask before taking photographs in markets or religious spaces.",
+    "languages": ["Hindi", "Magahi", "Urdu", "English"],
+    "travelModes": ["App-based taxi and auto-rickshaw", "City buses and local transport", "Rail from Patna Junction", "Patna Airport"],
+    "cleanliness": "Conditions vary between neighbourhoods and busy roads. Use sealed or filtered drinking water, choose busy food vendors with good turnover and dispose of litter responsibly.",
+    "weather": "October to February is generally cooler. Summers are very hot; monsoon rain from June to September can bring humidity and local waterlogging.",
+    "rules": [
+      "Check current museum and monument hours, entry fees and photography rules before setting out.",
+      "Use pedestrian crossings where available and allow extra time for traffic.",
+      "Follow posted instructions at riverfronts and never enter the river without authorised guidance."
+    ]
+  },
+  "6": {
+    "surroundings": "A quiet archaeological site near the Ganges in a rural part of Bhagalpur district. The remains are spread across an open area with few services immediately nearby.",
+    "hotelAreas": "Stay in Bhagalpur for the widest choice of hotels, food and transport; arrange a return vehicle to Antichak in advance.",
+    "stayRange": [1000, 3000],
+    "foodRange": [350, 900],
+    "transportRange": [600, 1800],
+    "ticketsRange": [0, 250],
+    "dayEstimate": 3600,
+    "culture": "Vikramshila was an important Buddhist learning centre. The surrounding area is rural; be considerate of local communities and avoid disturbing the protected remains.",
+    "languages": ["Hindi", "Angika", "English"],
+    "travelModes": ["Pre-arranged taxi from Bhagalpur", "Local auto for shorter connections", "Rail to Bhagalpur, then road transport"],
+    "cleanliness": "On-site facilities may be basic. Carry water and any essentials, take rubbish back with you and check road and facility conditions before departure.",
+    "weather": "October to February is usually more comfortable for exploring outdoors. Summer heat is strong; monsoon rain can affect rural roads and open paths.",
+    "rules": [
+      "Stay on established paths and do not touch, climb, mark or remove archaeological material.",
+      "There may be limited shade and uneven ground; wear sturdy footwear and carry water.",
+      "Confirm site access and your return ride before travelling to the rural location."
+    ]
+  },
+  "7": {
+    "surroundings": "A dense, energetic city by the Hooghly River, known for colonial-era avenues, historic neighbourhoods, markets, parks and riverside ghats. Monsoon rain and traffic affect travel times.",
+    "hotelAreas": "Park Street and Esplanade suit central sightseeing; Salt Lake and New Town offer modern hotels; Howrah is convenient for rail connections.",
+    "stayRange": [1800, 6500],
+    "foodRange": [600, 1800],
+    "transportRange": [400, 1500],
+    "ticketsRange": [300, 1800],
+    "dayEstimate": 6500,
+    "culture": "Bengali literature, arts, festivals and food are central to city life. Durga Puja is a major celebration; expect very large crowds and plan accommodation early.",
+    "languages": ["Bengali", "Hindi", "English"],
+    "travelModes": ["Metro, suburban rail and city bus", "Tram on operating routes", "Taxi and app-based cab", "Hooghly ferry on available routes"],
+    "cleanliness": "Crowding and cleanliness vary by neighbourhood and season. Use sealed drinking water, keep belongings secure in busy markets and dispose of waste in bins.",
+    "weather": "October to February is usually cooler and comfortable. Summers are hot and humid; monsoon rain is frequent from June to September.",
+    "rules": [
+      "Check museum, temple and attraction schedules; some sites close on specific weekdays.",
+      "Use official ferry boarding points and follow crew instructions; allow extra time for traffic.",
+      "Dress respectfully at places of worship and follow local photography guidance."
+    ]
+  },
+  "8": {
+    "surroundings": "A vast capital region with historic monuments, formal boulevards, lively markets and large green spaces. Air quality, heat and traffic can change significantly by season and area.",
+    "hotelAreas": "Connaught Place is central; Aerocity is convenient for the airport; Karol Bagh, Paharganj and South Delhi offer varied budgets and access.",
+    "stayRange": [2500, 8000],
+    "foodRange": [700, 2200],
+    "transportRange": [500, 1800],
+    "ticketsRange": [300, 1800],
+    "dayEstimate": 8500,
+    "culture": "Delhi's culture reflects many regions and eras, from Mughal heritage to contemporary arts and food. Dress respectfully at places of worship and ask before photographing people.",
+    "languages": ["Hindi", "English", "Punjabi", "Urdu"],
+    "travelModes": ["Delhi Metro and city buses", "Auto-rickshaw and taxi", "App-based cab", "Rail and airport connections"],
+    "cleanliness": "Air quality and street conditions vary by season and location. Check the air-quality forecast, carry water in summer and use sealed or filtered drinking water.",
+    "weather": "October to March is generally most comfortable. May and June can be extremely hot; winter fog and poor air quality can affect travel, while monsoon brings rain.",
+    "rules": [
+      "Monuments use security screening; check official ticketing and prohibited-item lists before arrival.",
+      "Do not fly drones near monuments, government areas or airports without the required permissions.",
+      "At temples and other religious sites, follow footwear, dress and photography instructions."
+    ]
+  },
+  "9": {
+    "surroundings": "A busy heritage city on the Yamuna, with the Taj Mahal, Agra Fort, gardens and bustling market districts. Popular sites can be crowded, especially around sunrise and holidays.",
+    "hotelAreas": "Taj Ganj is near the Taj Mahal; Fatehabad Road has many hotels and restaurants; Sadar Bazaar is useful for market visits.",
+    "stayRange": [1800, 6000],
+    "foodRange": [500, 1700],
+    "transportRange": [350, 1400],
+    "ticketsRange": [500, 2500],
+    "dayEstimate": 6800,
+    "culture": "Agra's identity is closely tied to Mughal architecture, crafts and local cuisine. Buy crafts from reputable shops and agree on transport fares before a ride.",
+    "languages": ["Hindi", "Urdu", "English"],
+    "travelModes": ["Rail and intercity bus", "Auto-rickshaw and e-rickshaw", "Taxi and app-based cab", "Walking around monument precincts"],
+    "cleanliness": "Crowded approaches can be dusty and busy. Use official entry gates and bins, carry water, and follow local guidance around the riverfront.",
+    "weather": "October to March is generally more comfortable. Summers are very hot; visit outdoor monuments early and check for rain during monsoon season.",
+    "rules": [
+      "The Taj Mahal is closed to visitors on Fridays; verify official hours and ticket rules before travel.",
+      "Taj Mahal security restricts certain items; check the current official list and use authorised storage if needed.",
+      "Stay within visitor routes and follow photography and conservation instructions at monuments."
+    ]
+  },
+  "10": {
+    "surroundings": "A lively north Indian city centred on the Golden Temple, with old-city lanes, bazaars and food streets. The temple precinct is peaceful but surrounding areas can be crowded.",
+    "hotelAreas": "The Golden Temple area and Hall Bazaar are convenient for heritage visits; Mall Road and Ranjit Avenue have a wider choice of hotels.",
+    "stayRange": [1500, 5000],
+    "foodRange": [500, 1600],
+    "transportRange": [300, 1100],
+    "ticketsRange": [100, 1200],
+    "dayEstimate": 5400,
+    "culture": "Sikh heritage, hospitality and Punjabi food are central to Amritsar. Visitors of all backgrounds are welcome at the Golden Temple; follow the shared-space etiquette.",
+    "languages": ["Punjabi", "Hindi", "English"],
+    "travelModes": ["Auto-rickshaw and e-rickshaw", "Taxi and local bus", "Rail via Amritsar Junction", "Sri Guru Ram Dass Jee International Airport"],
+    "cleanliness": "The shrine complex is maintained by its community, while cleanliness varies across busy market streets. Use bins, keep covered at the shrine and use sealed drinking water.",
+    "weather": "October to March is generally cooler for walking. Summer afternoons are very hot; winter mornings can be cold and fog may affect travel.",
+    "rules": [
+      "At the Golden Temple, cover your head, remove shoes, wash your feet at the entrance and follow posted guidance.",
+      "Do not smoke or consume alcohol inside the sacred complex; follow signs on photography and conduct.",
+      "Check current hours and tickets for Jallianwala Bagh, Gobindgarh Fort and museums."
+    ]
+  }
+}

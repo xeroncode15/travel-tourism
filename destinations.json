@@ -1,0 +1,373 @@
+[
+  {
+    "id": 1,
+    "name": "Bodh Gaya",
+    "state": "Bihar",
+    "category": "Spiritual",
+    "description": "Famous for Mahabodhi Temple and the place associated with Buddha's enlightenment.",
+    "interests": ["history", "spiritual", "culture"],
+    "durationHours": 5,
+    "budgetLevel": "medium",
+    "image": {
+      "src": "/images/bodh-gaya-mahabodhi-temple.jpg",
+      "alt": "Mahabodhi Temple in Bodh Gaya",
+      "credit": "Sumitsurai",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mahabodhi_Temple_South_Wall_(2).jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Nalanda",
+    "state": "Bihar",
+    "category": "Historical",
+    "description": "Explore the ancient Nalanda Mahavihara and its archaeological remains.",
+    "interests": ["history", "education", "culture"],
+    "durationHours": 3,
+    "budgetLevel": "low",
+    "image": {
+      "src": "/images/nalanda-mahavihara.jpg",
+      "alt": "Monastery ruins at Nalanda Mahavihara",
+      "credit": "Sumitsurai",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monastery_5_-_Nalanda_Mahavihara_(1).jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Rajgir",
+    "state": "Bihar",
+    "category": "Nature and Adventure",
+    "description": "Explore scenic hills, historical attractions and the famous Glass Bridge area.",
+    "interests": ["nature", "adventure", "history"],
+    "durationHours": 6,
+    "budgetLevel": "medium",
+    "image": {
+      "src": "/images/rajgir-landscape.jpg",
+      "alt": "Rugged hills and landscape around Rajgir",
+      "credit": "Photo Dharma",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rajgir_-_003_Rugged_Landscape_(9242543681).jpg",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Vaishali",
+    "state": "Bihar",
+    "category": "Historical",
+    "description": "Discover ancient heritage sites and the Ashokan Pillar.",
+    "interests": ["history", "culture", "spiritual"],
+    "durationHours": 3,
+    "budgetLevel": "low",
+    "image": {
+      "src": "/images/vaishali-ananda-stupa.jpg",
+      "alt": "Ananda Stupa and Ashokan pillar at Vaishali",
+      "credit": "Rohit Sharma",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ananda_Stupa_with_Ashok_lion_pillar,_Vaishali,_Bihar,_India.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Patna",
+    "state": "Bihar",
+    "category": "City and Heritage",
+    "description": "Explore Bihar Museum, Golghar and the historic city of Patna.",
+    "interests": ["history", "museum", "food", "culture"],
+    "durationHours": 5,
+    "budgetLevel": "medium",
+    "image": {
+      "src": "/images/patna-golghar.jpg",
+      "alt": "Golghar landmark in Patna",
+      "credit": "Sumitsurai",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Golghar_-_Patna_(2).jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Vikramshila",
+    "state": "Bihar",
+    "category": "Heritage",
+    "description": "Visit the archaeological remains of the ancient Vikramshila Mahavihara.",
+    "interests": ["history", "education", "culture"],
+    "durationHours": 3,
+    "budgetLevel": "low",
+    "image": {
+      "src": "/images/vikramshila-mahavihara.jpg",
+      "alt": "Archaeological ruins of Vikramshila Mahavihara",
+      "credit": "Jai Anga",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vikramshila_Mahavihara_Ruins.jpg",
+      "license": "CC0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Kolkata",
+    "state": "West Bengal",
+    "category": "City and Heritage",
+    "description": "Discover a vibrant cultural capital of grand architecture, riverside landmarks, sacred temples and celebrated food.",
+    "interests": ["history", "culture", "architecture", "food", "spiritual"],
+    "durationHours": 8,
+    "budgetLevel": "medium",
+    "location": {
+      "city": "Kolkata",
+      "state": "West Bengal",
+      "latitude": 22.5726,
+      "longitude": 88.3639,
+      "areas": [
+        "Maidan and Victoria Memorial",
+        "Hooghly riverfront and Howrah Bridge",
+        "Dakshineswar in north Kolkata",
+        "Kalighat in south Kolkata",
+        "Eco Park and Science City in New Town"
+      ]
+    },
+    "attractions": [
+      {
+        "name": "Victoria Memorial",
+        "description": "Explore the white-marble landmark, its gardens and museum galleries on the Maidan."
+      },
+      {
+        "name": "Howrah Bridge",
+        "description": "See the landmark cantilever bridge spanning the Hooghly River; the riverfront offers memorable views."
+      },
+      {
+        "name": "Dakshineswar Kali Temple",
+        "description": "Visit the riverside temple complex known for its shrine to Goddess Kali and distinctive architecture."
+      },
+      {
+        "name": "Kalighat Temple",
+        "description": "Experience one of Kolkata's most revered Hindu pilgrimage sites in the south of the city."
+      },
+      {
+        "name": "Indian Museum",
+        "description": "Browse extensive collections covering archaeology, art, geology and natural history."
+      },
+      {
+        "name": "Prinsep Ghat",
+        "description": "Enjoy a riverside walk beside the Hooghly and the landmark Palladian-style memorial."
+      },
+      {
+        "name": "Eco Park",
+        "description": "Spend time among gardens, lakes and recreational spaces in New Town."
+      },
+      {
+        "name": "Science City",
+        "description": "Explore interactive science exhibits and attractions suited to curious visitors of all ages."
+      }
+    ],
+    "bestTimeToVisit": "October to February is generally cooler and comfortable for sightseeing. Durga Puja, usually in September or October, is a spectacular but very busy time to visit.",
+    "travelTips": [
+      "Use the Metro for cross-city journeys and check current service times and station access before setting out.",
+      "Group Victoria Memorial, Indian Museum and Prinsep Ghat together; allow extra time for traffic between distant areas.",
+      "Check opening days, entry tickets and timed-show schedules for museums and attractions in advance.",
+      "Visit temples early, dress respectfully and follow each site's footwear and entry guidance.",
+      "Consider a Hooghly ferry for a scenic river crossing, and keep valuables secure in crowded stations and markets.",
+      "Plan outdoor stops around monsoon showers and carry drinking water in warmer months."
+    ],
+    "estimatedBudget": {
+      "currency": "INR",
+      "perTraveler": 2500,
+      "period": "sightseeing day",
+      "includes": ["Local transport", "Meals", "Selected attraction tickets"],
+      "excludes": ["Accommodation", "Intercity travel"]
+    },
+    "image": {
+      "src": "/images/kolkata-howrah-bridge.jpg",
+      "alt": "Howrah Bridge spanning the Hooghly River in Kolkata",
+      "credit": "Vyacheslav Argenberg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hooghly_River_and_the_Howrah_Bridge,_Kolkata,_India.jpg",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  },
+  {
+    "id": 8,
+    "name": "Delhi",
+    "state": "Delhi",
+    "category": "City and Heritage",
+    "description": "Discover India's capital through monumental avenues, Mughal-era landmarks and places of worship.",
+    "interests": ["history", "architecture", "culture", "spiritual"],
+    "durationHours": 8,
+    "budgetLevel": "medium",
+    "location": {
+      "city": "New Delhi",
+      "state": "Delhi",
+      "latitude": 28.6139,
+      "longitude": 77.209,
+      "areas": [
+        "India Gate and Kartavya Path",
+        "Red Fort in Old Delhi",
+        "Humayun's Tomb in Nizamuddin",
+        "Lotus Temple in south Delhi"
+      ]
+    },
+    "attractions": [
+      {
+        "name": "India Gate",
+        "description": "Visit the war memorial on Kartavya Path and explore the surrounding central government district."
+      },
+      {
+        "name": "Red Fort",
+        "description": "Explore the historic Mughal fort complex in Old Delhi; check current visitor access and opening hours."
+      },
+      {
+        "name": "Humayun's Tomb",
+        "description": "Walk through the gardens and mausoleum complex, an important example of Mughal architecture."
+      },
+      {
+        "name": "Lotus Temple",
+        "description": "See the Bahá’í House of Worship, known for its lotus-inspired form; follow visitor and prayer-area guidance."
+      }
+    ],
+    "bestTimeToVisit": "October to March is generally more comfortable for sightseeing. Summers can be very hot, and monsoon showers are common from July to September.",
+    "travelTips": [
+      "Group nearby attractions together and allow extra time for traffic between Old Delhi and south Delhi.",
+      "Use the Metro where convenient, and check current station access and service information.",
+      "Check each monument's current opening days, entry rules and ticket requirements before visiting.",
+      "The Lotus Temple is closed on Mondays; check its visitor guidance before planning a visit.",
+      "Carry water and sun protection, especially during warmer months."
+    ],
+    "estimatedBudget": {
+      "currency": "INR",
+      "perTraveler": 3000,
+      "period": "sightseeing day",
+      "includes": ["Local transport", "Meals", "Selected attraction tickets"],
+      "excludes": ["Accommodation", "Intercity travel"]
+    },
+    "image": {
+      "src": "/images/delhi-india-gate.jpg",
+      "alt": "India Gate in New Delhi",
+      "credit": "Nikhilb239",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:India_Gate,_New_Delhi_from_West.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+    }
+  },
+  {
+    "id": 9,
+    "name": "Agra",
+    "state": "Uttar Pradesh",
+    "category": "Historical",
+    "description": "Visit the Taj Mahal and explore the Mughal heritage of Agra, a separate city from Delhi.",
+    "interests": ["history", "architecture", "culture"],
+    "durationHours": 6,
+    "budgetLevel": "medium",
+    "location": {
+      "city": "Agra",
+      "state": "Uttar Pradesh",
+      "latitude": 27.1767,
+      "longitude": 78.0081,
+      "areas": [
+        "Taj Mahal on the Yamuna riverfront",
+        "Agra Fort",
+        "Mehtab Bagh"
+      ]
+    },
+    "attractions": [
+      {
+        "name": "Taj Mahal",
+        "description": "Explore the 17th-century marble mausoleum and its gardens. The Taj Mahal is in Agra, Uttar Pradesh, not Delhi."
+      },
+      {
+        "name": "Agra Fort",
+        "description": "Visit the historic Mughal fort overlooking the Yamuna River and the Taj Mahal."
+      },
+      {
+        "name": "Mehtab Bagh",
+        "description": "Enjoy views of the Taj Mahal from this garden complex across the Yamuna River."
+      }
+    ],
+    "bestTimeToVisit": "October to March is generally more comfortable for sightseeing. Visit early in the day to avoid peak heat and crowds.",
+    "travelTips": [
+      "The Taj Mahal is closed to visitors on Fridays; check official visitor information before travelling.",
+      "Check current ticketing, entry gates and security requirements in advance.",
+      "Allow time for queues and security checks, and follow restrictions on items inside the monument.",
+      "Agra is a separate city from Delhi; plan intercity transport and return times before making a day trip."
+    ],
+    "estimatedBudget": {
+      "currency": "INR",
+      "perTraveler": 2500,
+      "period": "sightseeing day",
+      "includes": ["Local transport", "Meals", "Selected attraction tickets"],
+      "excludes": ["Accommodation", "Intercity travel"]
+    },
+    "image": {
+      "src": "/images/agra-taj-mahal.jpg",
+      "alt": "Taj Mahal in Agra",
+      "credit": "Diego Delso",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:El_Taj_Mahal-Agra_India0023.JPG",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+    }
+  },
+  {
+    "id": 10,
+    "name": "Amritsar",
+    "state": "Punjab",
+    "category": "City and Heritage",
+    "description": "Experience Amritsar's Sikh heritage, moving history and vibrant old-city food culture.",
+    "interests": ["history", "spiritual", "culture", "food"],
+    "durationHours": 7,
+    "budgetLevel": "medium",
+    "location": {
+      "city": "Amritsar",
+      "state": "Punjab",
+      "latitude": 31.634,
+      "longitude": 74.8723,
+      "areas": [
+        "Golden Temple and the old city",
+        "Jallianwala Bagh",
+        "Gobindgarh Fort",
+        "Partition Museum near Town Hall"
+      ]
+    },
+    "attractions": [
+      {
+        "name": "Golden Temple (Harmandir Sahib)",
+        "description": "Visit Sikhism's holiest shrine. Cover your head, remove your shoes and follow the complex's visitor guidance."
+      },
+      {
+        "name": "Jallianwala Bagh",
+        "description": "Reflect at the memorial garden commemorating the 1919 massacre; check current visiting hours."
+      },
+      {
+        "name": "Gobindgarh Fort",
+        "description": "Explore the historic fort and its visitor experiences; check current opening times and ticket details."
+      },
+      {
+        "name": "Partition Museum",
+        "description": "Learn about the 1947 Partition through archival material and personal accounts at the museum near Town Hall."
+      }
+    ],
+    "bestTimeToVisit": "October to March is generally cooler for exploring the city. Summer afternoons can be very hot.",
+    "travelTips": [
+      "Dress respectfully at the Golden Temple, cover your head and follow posted guidance around the sacred pool.",
+      "The Golden Temple welcomes visitors throughout the day; check current arrangements before your visit.",
+      "Check opening days and hours for Jallianwala Bagh, Gobindgarh Fort and the Partition Museum.",
+      "The old-city lanes can be busy; allow extra time for walking and local transport."
+    ],
+    "estimatedBudget": {
+      "currency": "INR",
+      "perTraveler": 2200,
+      "period": "sightseeing day",
+      "includes": ["Local transport", "Meals", "Selected attraction tickets"],
+      "excludes": ["Accommodation", "Intercity travel"]
+    },
+    "image": {
+      "src": "/images/amritsar-golden-temple.jpg",
+      "alt": "Harmandir Sahib, the Golden Temple in Amritsar",
+      "credit": "Jasleen Kaur",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Akal_Takht_and_Harmandir_Sahib,_Amritsar,_Punjab,_India.jpg",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/"
+    }
+  }
+]

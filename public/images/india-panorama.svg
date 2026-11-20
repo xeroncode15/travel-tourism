@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1100" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="900" y1="0" x2="900" y2="890" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#081328"/>
+      <stop offset=".48" stop-color="#172748"/>
+      <stop offset=".78" stop-color="#704b4a"/>
+      <stop offset="1" stop-color="#d28a55"/>
+    </linearGradient>
+    <radialGradient id="sunset" cx="0" cy="0" r="1" gradientTransform="matrix(0 542 -830 0 1330 673)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffbf73" stop-opacity=".85"/>
+      <stop offset=".4" stop-color="#f48f5d" stop-opacity=".25"/>
+      <stop offset="1" stop-color="#ed8e63" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="water" x1="900" y1="816" x2="900" y2="1100" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#263b54"/>
+      <stop offset="1" stop-color="#081326"/>
+    </linearGradient>
+    <linearGradient id="monument" x1="1330" y1="426" x2="1330" y2="815" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f6dec0"/>
+      <stop offset="1" stop-color="#b9876d"/>
+    </linearGradient>
+    <pattern id="stars" width="157" height="111" patternUnits="userSpaceOnUse">
+      <circle cx="9" cy="18" r="1.5" fill="#FFF6E5" fill-opacity=".72"/>
+      <circle cx="67" cy="43" r="1" fill="#FFF6E5" fill-opacity=".48"/>
+      <circle cx="137" cy="12" r="1.4" fill="#FFF6E5" fill-opacity=".62"/>
+      <circle cx="111" cy="89" r="1" fill="#FFF6E5" fill-opacity=".45"/>
+      <circle cx="32" cy="95" r="1.2" fill="#FFF6E5" fill-opacity=".54"/>
+    </pattern>
+    <filter id="soft-glow" x="760" y="185" width="1050" height="900" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="58"/>
+    </filter>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h1800v1100H0z"/>
+  <path fill="url(#stars)" d="M0 0h1800v670H0z"/>
+  <ellipse cx="1328" cy="691" fill="#F6A66B" fill-opacity=".52" filter="url(#soft-glow)" rx="405" ry="321"/>
+  <path fill="#23334D" d="m0 664 151-101 101 47 146-132 106 73 154-154 141 121 132-100 108 81 155-143 110 124 146-63 150 102v309H0z"/>
+  <path fill="#17283F" d="m0 721 137-70 118 38 160-118 146 89 139-95 122 63 128-106 150 107 126-75 146 83 126-79 102 73v269H0z"/>
+  <path fill="#0E2037" d="m0 770 186-63 157 39 134-76 147 61 118-54 180 78 146-72 129 63 144-49 140 68 119-55v330H0z"/>
+  <path fill="url(#water)" d="M0 808h1800v292H0z"/>
+  <path stroke="#E8B080" stroke-opacity=".3" stroke-width="2" d="M825 850h803M1024 882h571M1173 921h469M901 971h711M1083 1021h581"/>
+  <path fill="url(#monument)" d="M1250 802V636h-32v166h-22V578h-20v224h-34V562h-25V535h24v-34h35v34h25v-18c0-77 56-127 154-127s154 50 154 127v18h25v-34h35v34h24v27h-25v240h-34V562h-20v240h-22V578h-32v224h-47V640c0-52-28-81-58-81s-58 29-58 81v162z"/>
+  <path fill="url(#monument)" d="M1272 499c7-41 27-66 59-85 20-12 42-19 58-43 16 24 38 31 58 43 32 19 52 44 59 85h-40c-5-26-21-46-45-59-13-7-25-11-32-24-7 13-19 17-32 24-24 13-40 33-45 59z"/>
+  <path fill="#F2D8B8" d="M1377 370c0-9 5-15 12-15s12 6 12 15v20h-24z"/>
+  <path fill="url(#monument)" d="M1092 802V625h-24V574h24v-27h32v27h24v51h-24v177zM1535 802V625h-24V574h24v-27h32v27h24v51h-24v177z"/>
+  <path fill="#12243B" d="M1307 802V676c0-49 30-80 82-80s82 31 82 80v126z"/>
+  <path fill="#102037" d="M1351 802V700c0-25 16-43 38-43s38 18 38 43v102z"/>
+  <path fill="url(#monument)" d="M1071 802h641v18h-641zM1042 820h699v13h-699zM1005 833h770v16h-770z"/>
+  <path fill="#071426" fill-opacity=".48" d="M0 854c190-35 333 39 505 6 180-34 310-7 478 29 245 52 508-64 817-8v219H0z"/>
+  <path fill="#061122" fill-opacity=".36" d="M0 0h1800v1100H0z"/>
+  <path fill="url(#sky)" fill-opacity=".16" d="M0 0h1800v1100H0z"/>
+</svg>

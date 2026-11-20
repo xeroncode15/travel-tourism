@@ -30,11 +30,16 @@ function readSavedTrip() {
   if (!Array.isArray(parsedTrip)) return [];
 
   const validIds = new Set(destinations.map((destination) => destination.id));
-  return parsedTrip.filter((id) => validIds.has(id));
+  return [...new Set(parsedTrip.filter((id) => validIds.has(id)))];
 }
 
 function formatInrRange([minimum, maximum]) {
   return `₹${minimum.toLocaleString("en-IN")} – ₹${maximum.toLocaleString("en-IN")}`;
+}
+
+function clampCount(value, maximum) {
+  const count = Number(value);
+  return Math.min(maximum, Math.max(1, Number.isFinite(count) ? Math.floor(count) : 1));
 }
 
 function App() {
@@ -43,6 +48,9 @@ function App() {
   const [tripIds, setTripIds] = useState(readSavedTrip);
   const [notice, setNotice] = useState("");
   const [travelerCount, setTravelerCount] = useState(2);
+  const [nightsPerStop, setNightsPerStop] = useState(1);
+  const [daysPerStop, setDaysPerStop] = useState(1);
+  const [previewedDestinationId, setPreviewedDestinationId] = useState(2);
 
   const categories = useMemo(
     () => ["All destinations", ...new Set(destinations.map((destination) => destination.category))],
@@ -63,10 +71,45 @@ function App() {
     return matchesName && matchesCategory;
   });
   const featuredDestinations = destinations.filter((destination) => featuredIds.has(destination.id));
-  const estimatedPerTraveler = plannedDestinations.reduce(
-    (total, destination) => total + travelGuides[destination.id].dayEstimate,
-    0
+  const spendByCategory = useMemo(
+    () => {
+      const totals = {
+        stay: [0, 0],
+        meals: [0, 0],
+        localTravel: [0, 0],
+        tickets: [0, 0]
+      };
+
+      plannedDestinations.forEach((destination) => {
+        const guide = travelGuides[destination.id];
+        [
+          ["stay", guide.stayRange, nightsPerStop],
+          ["meals", guide.foodRange, daysPerStop],
+          ["localTravel", guide.transportRange, daysPerStop],
+          ["tickets", guide.ticketsRange, daysPerStop]
+        ].forEach(([categoryKey, range, duration]) => {
+          totals[categoryKey][0] += range[0] * duration;
+          totals[categoryKey][1] += range[1] * duration;
+        });
+      });
+
+      return totals;
+    },
+    [plannedDestinations, nightsPerStop, daysPerStop]
   );
+  const budgetRows = [
+    { label: "Stay", range: spendByCategory.stay },
+    { label: "Meals", range: spendByCategory.meals },
+    { label: "Local travel", range: spendByCategory.localTravel },
+    { label: "Entry tickets", range: spendByCategory.tickets }
+  ];
+  const perTravelerRange = budgetRows.reduce(
+    ([minimum, maximum], { range }) => [minimum + range[0], maximum + range[1]],
+    [0, 0]
+  );
+  const estimatedTripRange = plannedDestinations.length
+    ? perTravelerRange.map((amount) => amount * travelerCount)
+    : null;
 
   useEffect(() => {
     localStorage.setItem(plannerStorageKey, JSON.stringify(tripIds));
@@ -228,16 +271,35 @@ function App() {
               <p>Discover stories etched into India's ancient universities and quiet heritage sites.</p>
               <div className="hidden-stops">
                 {featuredDestinations.map((destination) => (
-                  <div className="hidden-stop" key={destination.id}>
+                  <div
+                    className={`hidden-stop${previewedDestinationId === destination.id ? " is-previewed" : ""}${tripIds.includes(destination.id) ? " is-selected" : ""}`}
+                    key={destination.id}
+                  >
                     <span className="stop-index">{String(destination.id).padStart(2, "0")}</span>
-                    <span className="stop-name">{destination.name}<small>{destination.category}</small></span>
                     <button
                       type="button"
-                      className="icon-button"
-                      onClick={() => addToTrip(destination)}
-                      aria-label={`Add ${destination.name} to your journey`}
+                      className="stop-preview"
+                      onClick={() => setPreviewedDestinationId(destination.id)}
+                      aria-pressed={previewedDestinationId === destination.id}
+                      aria-label={`Preview ${destination.name}`}
                     >
-                      +
+                      <span className="stop-title-line">
+                        <span className="stop-name">{destination.name}</span>
+                        <span className="stop-category">{destination.category}</span>
+                      </span>
+                      <span className="stop-hook">{destination.description}</span>
+                    </button>
+                    <button
+                      type="button"
+                      className={`icon-button${tripIds.includes(destination.id) ? " is-added" : ""}`}
+                      onClick={() => {
+                        setPreviewedDestinationId(destination.id);
+                        addToTrip(destination);
+                      }}
+                      aria-label={tripIds.includes(destination.id) ? `${destination.name} is in your trip` : `Add ${destination.name} to your journey`}
+                      aria-pressed={tripIds.includes(destination.id)}
+                    >
+                      {tripIds.includes(destination.id) ? "✓" : "+"}
                     </button>
                   </div>
                 ))}
@@ -247,26 +309,70 @@ function App() {
             <article className="experience-card budget-card">
               <div className="card-kicker"><span>02</span> PLAN WITH CLARITY</div>
               <h3>Smart Budget<br />Calculator</h3>
-              <p>Indicative local costs for one night and one sightseeing day at each selected stop.</p>
-              <label className="traveler-control">
-                <span>Travellers</span>
-                <input
-                  type="number"
-                  min="1"
-                  max="20"
-                  value={travelerCount}
-                  onChange={(event) => {
-                    const count = Number(event.target.value);
-                    setTravelerCount(Math.min(20, Math.max(1, count || 1)));
-                  }}
-                />
-              </label>
-              <div className="budget-total">
-                <span>ESTIMATED LOCAL SPEND</span>
-                <strong>₹{(estimatedPerTraveler * travelerCount).toLocaleString("en-IN")}</strong>
-                <small>for {travelerCount} {travelerCount === 1 ? "traveller" : "travellers"}</small>
+              <p>Estimate local costs for the destinations in your trip.</p>
+              <div className="budget-controls">
+                <label className="budget-control">
+                  <span>Travellers</span>
+                  <input
+                    type="number"
+                    min="1"
+                    max="20"
+                    step="1"
+                    value={travelerCount}
+                    onChange={(event) => setTravelerCount(clampCount(event.target.value, 20))}
+                  />
+                </label>
+                <label className="budget-control">
+                  <span>Nights / stop</span>
+                  <input
+                    type="number"
+                    min="1"
+                    max="30"
+                    step="1"
+                    value={nightsPerStop}
+                    onChange={(event) => setNightsPerStop(clampCount(event.target.value, 30))}
+                  />
+                </label>
+                <label className="budget-control">
+                  <span>Days / stop</span>
+                  <input
+                    type="number"
+                    min="1"
+                    max="30"
+                    step="1"
+                    value={daysPerStop}
+                    onChange={(event) => setDaysPerStop(clampCount(event.target.value, 30))}
+                  />
+                </label>
               </div>
-              <p className="budget-disclaimer">Includes a budget stay, meals, local travel and typical tickets. Excludes intercity travel; actual prices vary.</p>
+              <div className="budget-total" aria-live="polite">
+                <span>ESTIMATED LOCAL SPEND</span>
+                <strong>{estimatedTripRange ? formatInrRange(estimatedTripRange) : "Select a stop"}</strong>
+                <small>
+                  {estimatedTripRange
+                    ? `${travelerCount} ${travelerCount === 1 ? "traveller" : "travellers"} · ${plannedDestinations.length} ${plannedDestinations.length === 1 ? "stop" : "stops"} · ${nightsPerStop} night${nightsPerStop === 1 ? "" : "s"} & ${daysPerStop} day${daysPerStop === 1 ? "" : "s"} per stop`
+                    : "Add a destination to see an estimated range."}
+                </small>
+              </div>
+              <p className="budget-stops" aria-live="polite">
+                {plannedDestinations.length
+                  ? `${plannedDestinations.length} selected: ${plannedDestinations.slice(0, 2).map((destination) => destination.name).join(" · ")}${plannedDestinations.length > 2 ? ` + ${plannedDestinations.length - 2} more` : ""}`
+                  : "No destinations selected yet."}
+              </p>
+              <ul className="budget-breakdown" aria-label="Estimated local cost breakdown">
+                {budgetRows.map(({ label, range }) => (
+                  <li key={label}>
+                    <span>{label}</span>
+                    <strong>
+                      {estimatedTripRange
+                        ? formatInrRange(range.map((amount) => amount * travelerCount))
+                        : "—"}
+                    </strong>
+                  </li>
+                ))}
+              </ul>
+              <p className="budget-disclaimer">Stay is estimated per night; meals, local travel and tickets per day at each stop. Excludes intercity travel.</p>
+              <a className="budget-trip-link" href="#trip-planner">Review your itinerary <span aria-hidden="true">↗</span></a>
             </article>
 
             <article className="experience-card safety-card">

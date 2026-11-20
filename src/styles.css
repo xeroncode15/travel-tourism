@@ -1,5 +1,5 @@
 :root {
-  font-family: "DM Sans", "Segoe UI", Arial, sans-serif;
+  font-family: "Segoe UI Variable Text", "Segoe UI", "DM Sans", Arial, sans-serif;
   color: #f7f5f0;
   background: #071321;
   font-synthesis: none;
@@ -18,7 +18,7 @@
   --line: rgba(215, 227, 238, .13);
   --glass: rgba(10, 25, 43, .73);
   --serif: Georgia, "Times New Roman", serif;
-  --sans: "DM Sans", "Segoe UI", Arial, sans-serif;
+  --sans: "Segoe UI Variable Text", "Segoe UI", "DM Sans", Arial, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -28,6 +28,7 @@ html { min-width: 320px; scroll-behavior: smooth; scroll-padding-top: 105px; }
 body {
   min-width: 320px;
   margin: 0;
+  line-height: 1.55;
   background:
     radial-gradient(ellipse at 82% 22%, rgba(35, 72, 107, .14), transparent 40%),
     var(--navy);
@@ -93,7 +94,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 .institution-name {
   color: #fff;
-  font-family: "Manrope", var(--sans);
+  font-family: "Segoe UI Variable Display", "Segoe UI", var(--sans);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 1.15px;
@@ -108,7 +109,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 .project-name {
   color: #fff;
-  font-family: "Manrope", var(--sans);
+  font-family: "Segoe UI Variable Display", "Segoe UI", var(--sans);
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 1.1px;
@@ -486,7 +487,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .section-heading h2, .map-copy h2, .planner-heading h2 {
   margin: 13px 0 0;
   color: #fff;
-  font-family: "Manrope", var(--sans);
+  font-family: "Segoe UI Variable Display", "Segoe UI", var(--sans);
   font-size: clamp(31px, 4vw, 48px);
   font-weight: 700;
   letter-spacing: -.055em;
@@ -500,22 +501,26 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   margin: 0 0 4px;
   color: var(--muted);
   font-size: 13px;
-  line-height: 1.8;
+  line-height: 1.6;
 }
 
 .experience-grid {
   display: grid;
-  grid-template-columns: 1.25fr .88fr .88fr;
-  gap: 15px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
 }
 
 .experience-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   min-width: 0;
+  min-height: 100%;
   overflow: hidden;
-  padding: 26px 24px 24px;
+  padding: 28px 25px 24px;
   border: 1px solid var(--line);
-  border-radius: 6px;
+  border-radius: 8px;
   background:
     linear-gradient(145deg, rgba(255, 255, 255, .055), rgba(255, 255, 255, .018)),
     #0b1b2d;
@@ -539,7 +544,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   display: flex;
   align-items: center;
   gap: 9px;
-  color: #a5b1bd;
+  color: #b7c2cc;
   font-size: 8px;
   font-weight: 700;
   letter-spacing: 1.4px;
@@ -550,7 +555,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .experience-card h3 {
   margin: 18px 0 9px;
   color: #fff;
-  font-family: "Manrope", var(--sans);
+  font-family: "Segoe UI Variable Display", "Segoe UI", var(--sans);
   font-size: 22px;
   font-weight: 700;
   letter-spacing: -.045em;
@@ -559,25 +564,34 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 .experience-card > p {
   margin: 0;
-  color: #9eaab6;
-  font-size: 11px;
-  line-height: 1.7;
+  color: #b4c0ca;
+  font-size: 12px;
+  line-height: 1.6;
 }
 
 .hidden-stops { margin-top: 19px; }
 
 .hidden-stop {
   display: grid;
-  min-height: 53px;
+  min-height: 78px;
   align-items: center;
-  grid-template-columns: 30px 1fr 30px;
-  gap: 7px;
+  grid-template-columns: 24px minmax(0, 1fr) 30px;
+  gap: 8px;
+  padding: 8px 3px;
   border-top: 1px solid rgba(255, 255, 255, .09);
+  transition: background .18s ease, border-color .18s ease;
 }
 
-.stop-index { color: #b08145; font-family: var(--serif); font-size: 12px; font-style: italic; }
-.stop-name { color: #f4f2ed; font-size: 11px; font-weight: 600; }
-.stop-name small { display: block; margin-top: 3px; color: #8997a5; font-size: 8px; font-weight: 500; }
+.hidden-stop.is-previewed { border-top-color: rgba(245, 189, 104, .3); background: rgba(245, 189, 104, .045); }
+.hidden-stop.is-selected { border-top-color: rgba(167, 213, 173, .35); background: rgba(112, 166, 119, .06); }
+.stop-index { color: #d7ae6f; font-family: var(--serif); font-size: 12px; font-style: italic; }
+.stop-preview { display: grid; min-width: 0; gap: 5px; padding: 2px 0; border: 0; background: transparent; color: inherit; cursor: pointer; text-align: left; }
+.stop-title-line { display: flex; align-items: center; flex-wrap: wrap; gap: 5px 8px; }
+.stop-name { color: #f4f2ed; font-family: "Segoe UI Variable Display", "Segoe UI", var(--sans); font-size: 12px; font-weight: 700; }
+.stop-category { display: inline-flex; padding: 3px 6px; border: 1px solid rgba(245, 189, 104, .24); border-radius: 999px; background: rgba(245, 189, 104, .07); color: #e8c98f; font-size: 8px; font-weight: 700; letter-spacing: .45px; text-transform: uppercase; }
+.stop-hook { display: -webkit-box; overflow: hidden; color: #b4c0ca; font-size: 10px; line-height: 1.5; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.stop-preview:hover .stop-name { color: #f5cb86; }
+.stop-preview:focus-visible { border-radius: 3px; outline-offset: 3px; }
 
 .icon-button {
   display: grid;
@@ -594,35 +608,26 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 .icon-button:hover { background: var(--gold); color: var(--navy); }
+.icon-button.is-added { border-color: rgba(167, 213, 173, .48); background: rgba(112, 166, 119, .12); color: #c1e6c6; }
+.icon-button.is-added:hover { background: rgba(112, 166, 119, .24); color: #e4f6e5; }
 
-.traveler-control {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 19px;
-  padding: 11px 0;
-  border-top: 1px solid rgba(255, 255, 255, .1);
-  border-bottom: 1px solid rgba(255, 255, 255, .1);
-  color: #d7dce0;
-  font-size: 10px;
-}
-
-.traveler-control input {
-  width: 52px;
-  padding: 5px 4px;
-  border: 1px solid rgba(255, 255, 255, .17);
-  border-radius: 2px;
-  background: rgba(3, 10, 20, .5);
-  color: #fff;
-  text-align: center;
-}
-
-.budget-total { display: grid; gap: 3px; padding-top: 16px; }
-.budget-total span { color: #91a0ad; font-size: 7px; font-weight: 700; letter-spacing: 1px; }
-.budget-total strong { color: var(--gold); font-family: "Manrope", var(--sans); font-size: 31px; letter-spacing: -.04em; }
-.budget-total small { color: #a8b2bc; font-size: 9px; }
-
-.experience-card .budget-disclaimer { margin-top: 12px; color: #788695; font-size: 8px; }
+.budget-controls { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 17px; }
+.budget-control { display: grid; min-width: 0; gap: 6px; color: #c0cad2; font-size: 9px; font-weight: 600; }
+.budget-control span { min-height: 14px; white-space: nowrap; }
+.budget-control input { width: 100%; min-width: 0; min-height: 34px; padding: 6px; border: 1px solid rgba(245, 189, 104, .28); border-radius: 4px; background: rgba(3, 10, 20, .48); color: #fff; font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; text-align: center; }
+.budget-control input:focus-visible { border-color: var(--gold); }
+.budget-total { display: grid; gap: 4px; padding-top: 15px; }
+.budget-total span { color: #b4c0ca; font-size: 8px; font-weight: 700; letter-spacing: 1px; }
+.budget-total strong { color: var(--gold); font-family: "Segoe UI Variable Display", "Segoe UI", var(--sans); font-size: clamp(18px, 2vw, 24px); font-variant-numeric: tabular-nums; letter-spacing: -.035em; line-height: 1.25; }
+.budget-total small { color: #b4c0ca; font-size: 9px; line-height: 1.5; }
+.experience-card .budget-stops { margin: 10px 0 0; padding-top: 9px; border-top: 1px solid rgba(255, 255, 255, .09); color: #c8d0d7; font-size: 9px; line-height: 1.5; }
+.budget-breakdown { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; margin: 9px 0 0; padding: 0; list-style: none; }
+.budget-breakdown li { display: grid; min-width: 0; gap: 3px; padding: 7px 8px; border: 1px solid rgba(245, 189, 104, .14); border-radius: 4px; background: rgba(245, 189, 104, .035); }
+.budget-breakdown li span { color: #aebbc5; font-size: 8px; font-weight: 700; letter-spacing: .35px; text-transform: uppercase; }
+.budget-breakdown li strong { color: #f0d7ac; font-size: 9px; font-weight: 600; line-height: 1.45; overflow-wrap: anywhere; }
+.experience-card .budget-disclaimer { margin: 9px 0 0; color: #aab6c0; font-size: 9px; line-height: 1.55; }
+.budget-trip-link { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: auto; padding-top: 12px; color: #f0c77e; font-size: 10px; font-weight: 700; text-decoration: none; }
+.budget-trip-link:hover { color: #ffe0a6; }
 
 .emergency-callout {
   display: grid;
@@ -636,15 +641,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 .emergency-callout > span { color: #d8a36e; font-size: 7px; font-weight: 700; letter-spacing: 1px; }
 .emergency-callout a { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.emergency-callout strong { color: #ffd58a; font-family: "Manrope", var(--sans); font-size: 27px; line-height: 1; }
+.emergency-callout strong { color: #ffd58a; font-family: "Segoe UI Variable Display", "Segoe UI", var(--sans); font-size: 27px; line-height: 1; }
 .emergency-callout small { color: #b2bcc5; font-size: 8px; }
 
 .safety-tip { border-top: 1px solid rgba(255, 255, 255, .1); }
-.safety-tip summary { display: flex; justify-content: space-between; padding: 10px 0; color: #d9e0e5; cursor: pointer; font-size: 9px; list-style: none; }
+.safety-tip summary { display: flex; justify-content: space-between; padding: 10px 0; color: #e5e9ec; cursor: pointer; font-size: 10px; font-weight: 600; list-style: none; }
 .safety-tip summary::-webkit-details-marker { display: none; }
 .safety-tip summary span { color: var(--gold); font-size: 15px; line-height: 10px; }
 .safety-tip[open] summary span { transform: rotate(45deg); }
-.safety-tip p { margin: -2px 0 12px; color: #96a4b0; font-size: 9px; line-height: 1.65; }
+.safety-tip p { margin: -2px 0 12px; color: #b2bec8; font-size: 10px; line-height: 1.6; }
 
 .map-section { padding-top: 20px; }
 
@@ -664,7 +669,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 .map-copy { position: relative; z-index: 2; }
 .map-copy h2 { font-size: clamp(32px, 4vw, 49px); }
-.map-copy > p:not(.eyebrow) { max-width: 325px; margin: 16px 0 0; color: #a4b0bc; font-size: 12px; line-height: 1.8; }
+.map-copy > p:not(.eyebrow) { max-width: 325px; margin: 16px 0 0; color: #b4c0ca; font-size: 12px; line-height: 1.6; }
 
 .map-legend {
   display: flex;
@@ -920,14 +925,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .destination-card h3 {
   margin: 0;
   color: #fff;
-  font-family: "Manrope", var(--sans);
+  font-family: "Segoe UI Variable Display", "Segoe UI", var(--sans);
   font-size: 21px;
   font-weight: 700;
   letter-spacing: -.045em;
 }
 
 .state-label { margin: 5px 0 0; color: #8c9aa7; font-size: 8px; letter-spacing: 1.2px; text-transform: uppercase; }
-.description { min-height: 55px; margin: 13px 0 14px; color: #acb6bf; font-size: 10px; line-height: 1.7; }
+.description { min-height: 55px; margin: 13px 0 14px; color: #b4c0ca; font-size: 11px; line-height: 1.6; }
 .card-details { display: flex; align-items: center; justify-content: space-between; gap: 9px; padding-top: 11px; border-top: 1px solid rgba(255, 255, 255, .1); color: #a8b3bd; font-size: 9px; }
 .card-details strong { color: #f3cb8b; font-size: 10px; }
 .interest-labels { color: #8493a0; font-size: 8px; text-align: right; }
@@ -962,19 +967,19 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .destination-guide summary span { color: var(--gold); font-size: 15px; line-height: 10px; transition: transform .18s ease; }
 .destination-guide[open] summary span { transform: rotate(45deg); }
 .guide-content { padding: 2px 0 3px; color: #aab6c0; }
-.guide-content h4 { margin: 15px 0 8px; color: #f0d7ac; font-size: 10px; font-weight: 700; letter-spacing: .5px; }
+.guide-content h4 { margin: 15px 0 8px; color: #f0d7ac; font-size: 10px; font-weight: 700; letter-spacing: .5px; line-height: 1.5; }
 .attraction-list, .travel-tips { display: grid; gap: 11px; margin: 0; padding: 0; list-style: none; }
 .attraction-list li { position: relative; display: grid; gap: 4px; padding-left: 13px; }
 .attraction-list li::before { position: absolute; top: 6px; left: 0; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); content: ""; }
 .attraction-list strong { color: #f0d7ac; font-family: var(--serif); font-size: 12px; font-weight: 600; letter-spacing: .1px; }
 .guide-location strong { color: #e8edf0; font-size: 10px; font-weight: 700; }
-.attraction-list li span, .guide-copy, .guide-location p, .guide-budget p { margin: 0; color: #aebbc5; font-size: 10px; line-height: 1.75; }
+.attraction-list li span, .guide-copy, .guide-location p, .guide-budget p { margin: 0; color: #b4c0ca; font-size: 10px; line-height: 1.6; }
 .guide-location { margin-top: 14px; padding-top: 11px; border-top: 1px solid rgba(255, 255, 255, .08); }
 .guide-location p { margin-top: 4px; }
 .guide-location small { display: block; margin-top: 5px; color: #8d9ba7; font-size: 9px; }
 .guide-budget { display: grid; grid-template-columns: 1fr auto; gap: 4px 8px; margin-top: 12px; padding: 11px; border: 1px solid rgba(245, 189, 104, .16); background: rgba(245, 189, 104, .045); }
 .guide-budget > span { color: #c8a86f; font-size: 8px; font-weight: 700; letter-spacing: .8px; }
-.guide-budget > strong { grid-column: 2; grid-row: 1 / span 2; align-self: center; color: #f5d399; font-family: "Manrope", var(--sans); font-size: 17px; }
+.guide-budget > strong { grid-column: 2; grid-row: 1 / span 2; align-self: center; color: #f5d399; font-family: "Segoe UI Variable Display", "Segoe UI", var(--sans); font-size: 17px; }
 .guide-budget > small { color: #aab5bf; font-size: 9px; }
 .guide-budget p { grid-column: 1 / -1; margin-top: 4px; }
 .expense-breakdown { grid-column: 1 / -1; display: grid; gap: 6px; margin: 8px 0 0; padding: 8px 0 0; border-top: 1px solid rgba(255, 255, 255, .08); list-style: none; }
@@ -983,15 +988,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .guide-info-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 12px; }
 .guide-info-card { min-width: 0; padding: 10px; border: 1px solid rgba(255, 255, 255, .08); background: rgba(255, 255, 255, .025); }
 .guide-info-card h4 { margin: 0 0 8px; }
-.guide-info-card p { margin: 0; color: #aebbc5; font-size: 10px; line-height: 1.75; }
+.guide-info-card p { margin: 0; color: #b4c0ca; font-size: 10px; line-height: 1.6; }
 .guide-info-card .guide-copy { margin-top: 7px; }
 .guide-info-card .guide-copy strong { color: #c8d1d8; }
 .guide-info-wide { grid-column: 1 / -1; }
-.guide-list { display: grid; gap: 8px; margin: 0; padding-left: 16px; color: #b4c0c9; font-size: 10px; font-weight: 500; line-height: 1.75; letter-spacing: .1px; }
+.guide-list { display: grid; gap: 8px; margin: 0; padding-left: 16px; color: #c0cad2; font-size: 10px; font-weight: 500; line-height: 1.6; letter-spacing: .1px; }
 .guide-list li::marker { color: var(--gold); font-size: .85em; }
 .guide-link { display: inline-block; margin-top: 8px; color: #f0c77e; font-size: 10px; font-weight: 700; text-decoration: none; }
 .guide-link:hover { color: #ffe0a6; text-decoration: underline; }
-.travel-tips li { position: relative; padding-left: 14px; color: #b4c0c9; font-size: 10px; font-weight: 500; line-height: 1.75; letter-spacing: .1px; }
+.travel-tips li { position: relative; padding-left: 14px; color: #c0cad2; font-size: 10px; font-weight: 500; line-height: 1.6; letter-spacing: .1px; }
 .travel-tips li::before { position: absolute; top: 7px; left: 0; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); content: ""; }
 
 .empty-state {
@@ -1017,7 +1022,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .planner-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 .planner-heading h2 { font-size: clamp(27px, 3.5vw, 40px); }
 .planner-total { display: flex; align-items: baseline; gap: 9px; color: #a6b1bc; font-size: 9px; }
-.planner-total strong { color: var(--gold); font-family: "Manrope", var(--sans); font-size: 34px; font-weight: 700; }
+.planner-total strong { color: var(--gold); font-family: "Segoe UI Variable Display", "Segoe UI", var(--sans); font-size: 34px; font-weight: 700; }
 .notice { min-height: 16px; margin: 15px 0 0; color: #b8d7b6; font-size: 10px; }
 
 .planner-empty {

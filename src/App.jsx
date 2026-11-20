@@ -1,5 +1,6 @@
 import React, { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import destinations from "../destinations.json";
+import destinationImages from "../destination-images.json";
 import travelGuides from "../travel-guides.json";
 
 const IndiaGlobe = lazy(() => import("./components/IndiaGlobe.jsx"));
@@ -408,25 +409,26 @@ function App() {
                   ],
                   [0, 0]
                 );
+                const image = destination.image ?? destinationImages[destination.id];
                 return (
                   <article className={`destination-card card-tone-${index % 5}`} key={destination.id}>
-                    <div className={`card-art${destination.image ? " has-image" : ""}`}>
-                      {destination.image && (
+                    <div className={`card-art${image ? " has-image" : ""}`}>
+                      {image && (
                         <img
                           className="destination-photo"
-                          src={`${import.meta.env.BASE_URL}${destination.image.src.replace(/^\/+/, "")}`}
-                          alt={destination.image.alt}
+                          src={`${import.meta.env.BASE_URL}${image.src.replace(/^\/+/, "")}`}
+                          alt={image.alt}
                           loading="lazy"
                           decoding="async"
                         />
                       )}
                       <span className="art-number" aria-hidden="true">{String(destination.id).padStart(2, "0")}</span>
                       <span className="art-ring" aria-hidden="true" />
-                      {destination.image && (
+                      {image && (
                         <span className="photo-credit">
-                          Photo: <a href={destination.image.sourceUrl} target="_blank" rel="noreferrer">{destination.image.credit}</a> (cropped)
+                          Photo: <a href={image.sourceUrl} target="_blank" rel="noreferrer">{image.credit}</a> (cropped)
                           {" · "}
-                          <a href={destination.image.licenseUrl} target="_blank" rel="noreferrer">{destination.image.license}</a>
+                          <a href={image.licenseUrl} target="_blank" rel="noreferrer">{image.license}</a>
                         </span>
                       )}
                     </div>

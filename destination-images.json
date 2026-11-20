@@ -1,0 +1,258 @@
+{
+  "11": {
+    "src": "/images/varanasi-ghats.jpg",
+    "alt": "Boats and riverfront ghats along the Ganges in Varanasi",
+    "credit": "Marcin Białek",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Varanasi_2010_ghats3.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "12": {
+    "src": "/images/goa-beach.jpg",
+    "alt": "Beach on the Salcete coast in South Goa",
+    "credit": "Fredericknoronha",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:South_Goa_beach,_along_the_Salcete_coast,_Goa._3.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "13": {
+    "src": "/images/tirupati-temple.jpg",
+    "alt": "Entrance to the Tirumala Venkateswara Temple",
+    "credit": "Nikhilb239",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tirumala_Venkateswara_temple_entrance_09062015.JPG",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "14": {
+    "src": "/images/tawang-monastery.jpg",
+    "alt": "Tawang Monastery in the Himalayan mountains",
+    "credit": "Vikramjit Kakati",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tawang_Monastery_(Tibetan_Buddhist).jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "15": {
+    "src": "/images/kaziranga-rhino.jpg",
+    "alt": "Indian rhinoceros in Kaziranga National Park",
+    "credit": "Tisha Mukherjee",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Indian_rhinoceros_in_Kaziranga_National_Park_March_2025_by_Tisha_Mukherjee_02.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "16": {
+    "src": "/images/chitrakote-falls.jpg",
+    "alt": "Chitrakote Falls in the Bastar region of Chhattisgarh",
+    "credit": "Gotul",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Citrakoot,_Chitar_Kot_Water_falls_at_Bastar_Chhattisgarh.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "17": {
+    "src": "/images/statue-of-unity.jpg",
+    "alt": "The Statue of Unity in Gujarat",
+    "credit": "AAK1969",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Statue_of_Unity,_Kevadiya,_Gujarat.jpg",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "18": {
+    "src": "/images/kurukshetra-brahma-sarovar.jpg",
+    "alt": "Brahma Sarovar in Kurukshetra",
+    "credit": "Gagan.leonidas",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brahma_Sarovar_Kurukshetra.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "19": {
+    "src": "/images/shimla-mall-road.jpg",
+    "alt": "View over Mall Road in Shimla",
+    "credit": "Navneet Sharma",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bird_eye_View_of_Mall_Road_,_Shimla.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "20": {
+    "src": "/images/deoghar-baidyanath.jpg",
+    "alt": "Baidyanath Temple complex in Deoghar",
+    "credit": "Pinakpani",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Baidyanath_temple_and_temple_complex,_Deoghar_11.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "21": {
+    "src": "/images/hampi-ruins.jpg",
+    "alt": "Historic stone temple ruins and stepped tank at Hampi",
+    "credit": "Dey.sandip",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Krishna_Pushkarani_-_Hampi_Ruins.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "22": {
+    "src": "/images/munnar-tea-gardens.jpg",
+    "alt": "Green tea gardens in Munnar",
+    "credit": "Ruben Joseph",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Munnar_Tea_Gardens.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "23": {
+    "src": "/images/khajuraho-temple.jpg",
+    "alt": "Dulhadeo Temple in Khajuraho",
+    "credit": "Marcin Białek",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Khajuraho_Dulhadeo_2010.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "24": {
+    "src": "/images/ajanta-caves.jpg",
+    "alt": "Interior of Cave 26 at the Ajanta Caves",
+    "credit": "Dey.sandip",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cave_26,_Ajanta.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "25": {
+    "src": "/images/loktak-lake.jpg",
+    "alt": "Waters and floating vegetation of Loktak Lake in Manipur",
+    "credit": "ch_15march",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Loktak_Lake_Manipur_05.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+  },
+  "26": {
+    "src": "/images/shillong-elephant-falls.jpg",
+    "alt": "Elephant Falls in Meghalaya",
+    "credit": "Ishita Singh 015",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elephant_Falls_Meghalaya.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "27": {
+    "src": "/images/aizawl.jpg",
+    "alt": "Panoramic view of Aizawl in Mizoram",
+    "credit": "Jokomarel",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aizawl_panoramicview.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "28": {
+    "src": "/images/kohima.jpg",
+    "alt": "Cityscape of Kohima in Nagaland",
+    "credit": "PP Yoonus",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kohima_City.jpeg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "29": {
+    "src": "/images/puri-jagannath.jpg",
+    "alt": "Jagannath Temple in Puri",
+    "credit": "Bernard Gagnon",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jagannath_Temple,_Puri_03.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "30": {
+    "src": "/images/jaipur-hawa-mahal.jpg",
+    "alt": "Hawa Mahal, the Palace of Winds, in Jaipur",
+    "credit": "Jakub Hałun",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:20191218,_Hawa_Mahal_(The_Palace_of_Winds)_in_Jaipur,_1128_9119.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "31": {
+    "src": "/images/gangtok.jpg",
+    "alt": "View of Gangtok from the ropeway",
+    "credit": "Subhrajyoti07",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:View_of_Gangtok_city_from_Ropeway.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "32": {
+    "src": "/images/madurai-meenakshi.jpg",
+    "alt": "Meenakshi Temple in Madurai",
+    "credit": "Jim Evans",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sri_Meenakshi_Devasthanam_Temple.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "33": {
+    "src": "/images/hyderabad-charminar.jpg",
+    "alt": "Charminar monument in Hyderabad",
+    "credit": "DidierTais",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Charminar_Hyderabad_1.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "34": {
+    "src": "/images/agartala-ujjayanta-palace.jpg",
+    "alt": "Ujjayanta Palace in Agartala",
+    "credit": "Kingshuk Mondal",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Left_Facade_of_Ujjayanta_Palace,_Agartala,_Tripura_02.JPG",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "35": {
+    "src": "/images/rishikesh-ganga.jpg",
+    "alt": "The Ganges flowing through Rishikesh",
+    "credit": "Manoj Kumar Bhatnagar",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ganga_River_,_Rishikesh,_March_2019.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "36": {
+    "src": "/images/sri-vijaya-puram-cellular-jail.jpg",
+    "alt": "Cellular Jail in Sri Vijaya Puram, Andaman and Nicobar Islands",
+    "credit": "Harvinder Chandigarh",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cellular_Jail,_Andaman_&_Nicobar,_Port_Blair,_India,_night_view.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "37": {
+    "src": "/images/chandigarh-rock-garden.jpg",
+    "alt": "Sculptures at the Rock Garden in Chandigarh",
+    "credit": "Ijon",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chandigarh_Rock_Garden_4.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "38": {
+    "src": "/images/diu-fort.jpg",
+    "alt": "Diu Fort overlooking the Arabian Sea",
+    "credit": "Aditya Mahar",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Diu_fort,_India.JPG",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "39": {
+    "src": "/images/srinagar-dal-lake.jpg",
+    "alt": "Dal Lake in Srinagar, Jammu and Kashmir",
+    "credit": "Dashrathgoyal85",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dal_Lake,_Srinagar,_Jammu_and_Kashmir.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "40": {
+    "src": "/images/leh-palace.jpg",
+    "alt": "Leh Palace viewed from Shanti Stupa",
+    "credit": "Sumit Das",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leh_Palace_-_Leh_-_Ladakh_-_View_from_Shanti_Stupa.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "41": {
+    "src": "/images/kavaratti-beach.jpg",
+    "alt": "Beach and lagoon at Kavaratti in Lakshadweep",
+    "credit": "Thejas",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_beach_at_Kavaratti,_Lakshadweep.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
+  },
+  "42": {
+    "src": "/images/puducherry-promenade.jpg",
+    "alt": "Promenade Beach in Puducherry",
+    "credit": "Dey.sandip",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beach_Promenade,_Pondicherry,_India.jpg",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+  }
+}

@@ -16,7 +16,9 @@ const mapCoordinates = {
   7: { left: 80, top: 43 },
   8: { left: 48, top: 25 },
   9: { left: 52, top: 31 },
-  10: { left: 42, top: 19 }
+  10: { left: 42, top: 19 },
+  11: { left: 58, top: 39 },
+  12: { left: 34, top: 68 }
 };
 
 function readSavedTrip() {
@@ -292,9 +294,9 @@ function App() {
               <p className="eyebrow">FIND YOUR PLACE ON THE MAP</p>
               <h2 id="map-title">India is calling.</h2>
               <p>
-                Select a glowing marker to add a destination anywhere in India to your journey.
+                Select a featured marker, or browse all destinations below to add a stop.
               </p>
-              <div className="map-legend"><span /> DESTINATIONS IN YOUR DATASET</div>
+              <div className="map-legend"><span /> FEATURED STOPS · FULL LIST BELOW</div>
               <a className="text-link" href="#destinations">Browse all destinations <span>↗</span></a>
             </div>
 
@@ -389,6 +391,10 @@ function App() {
               filteredDestinations.map((destination, index) => {
                 const isPlanned = tripIds.includes(destination.id);
                 const guide = travelGuides[destination.id];
+                const guidePlace = destination.location?.city ?? destination.name;
+                const guideLocation = guidePlace.toLowerCase() === destination.state.toLowerCase()
+                  ? guidePlace
+                  : `${guidePlace}, ${destination.state}`;
                 const expenseItems = [
                   ["Stay · 1 night", guide.stayRange],
                   ["Meals · 1 day", guide.foodRange],
@@ -495,7 +501,7 @@ function App() {
                               <p className="guide-copy">Indicative budget room: {formatInrRange(guide.stayRange)} per night.</p>
                               <a
                                 className="guide-link"
-                                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`hotels in ${destination.name}, ${destination.state}`)}`}
+                                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`hotels in ${guideLocation}`)}`}
                                 target="_blank"
                                 rel="noreferrer"
                               >
@@ -522,7 +528,7 @@ function App() {
                               <p>{guide.weather}</p>
                               <a
                                 className="guide-link"
-                                href={`https://www.google.com/search?q=${encodeURIComponent(`weather in ${destination.name}, ${destination.state}`)}`}
+                                href={`https://www.google.com/search?q=${encodeURIComponent(`weather in ${guideLocation}`)}`}
                                 target="_blank"
                                 rel="noreferrer"
                               >
@@ -536,7 +542,7 @@ function App() {
                               </ul>
                               <a
                                 className="guide-link"
-                                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${destination.name}, ${destination.state} attractions reviews`)}`}
+                                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${guideLocation} attractions reviews`)}`}
                                 target="_blank"
                                 rel="noreferrer"
                               >

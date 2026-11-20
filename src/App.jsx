@@ -213,11 +213,11 @@ function App() {
           <div className="section-heading">
             <div>
               <p className="eyebrow">YOUR JOURNEY, INTELLIGENTLY DESIGNED</p>
-              <h2>More than a map.<br /><span>A new way to travel.</span></h2>
+              <h2>Explore India’s destinations.<br /><span>Plan smarter, travel prepared.</span></h2>
             </div>
             <p className="section-intro">
-              Thoughtful tools for finding your way, planning your spend and travelling with
-              confidence.
+              Find destination guides with estimated trip costs, seasonal weather, local culture,
+              transport options and practical travel tips.
             </p>
           </div>
 
